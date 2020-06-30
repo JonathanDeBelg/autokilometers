@@ -30,6 +30,7 @@ class KilometerController extends Controller
             'mileage_jonathan_company' => Kilometer::getCompanyMileageSumByRider('jonathan'),
             'mileage_nicolas_company' => Kilometer::getCompanyMileageSumByRider('nicolas'),
             'mileage_laura_company' => Kilometer::getCompanyMileageSumByRider('laura'),
+            'mileage_atm' => Kilometer::getLastInsertedMileage()
         ]);
     }
 

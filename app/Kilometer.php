@@ -23,7 +23,7 @@ class Kilometer extends Model
         return $kilometerToAdd;
     }
 
-    public static function getThisMonthsEndingMileage(): int
+    public static function getLastInsertedMileage(): int
     {
         $lastMileage = Kilometer::orderBy('id', 'desc')
             ->first();

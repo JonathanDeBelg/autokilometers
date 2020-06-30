@@ -6,7 +6,8 @@
             <div class="col-lg-8 col-sm-12">
                 <div class="card">
                     <div class="card-header d-flex">
-                        <h3>Rittenoverzicht</h3>
+                        <h3><strong>Dashboard</strong></h3>
+                        <p class="ml-auto font-weight-bold">Huidige stand; {{ $mileage_atm }}km</p>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -19,7 +20,7 @@
                                 @endif
 
                                 <div class="mileage-overview">
-                                    <h3>Kilometeroverzicht {{ date('F') }}</h3>
+                                    <h5>Kilometeroverzicht {{ date('F') }}</h5>
                                     <table class="table table-responsive">
                                         <thead>
                                             <tr>
@@ -50,7 +51,7 @@
                                 </div>
 
                                 <div class="all-mileage">
-                                    <h3>Kilometeroverzicht</h3>
+                                    <h5>Kilometeroverzicht</h5>
                                     <table class="table table-responsive table-hover">
                                         <thead>
                                             <tr>

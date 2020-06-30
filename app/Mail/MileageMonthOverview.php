@@ -39,7 +39,7 @@ class MileageMonthOverview extends Mailable
                 'mileageJonathan' => Kilometer::getMileageSumByRider('jonathan'),
                 'mileageNicolas' => Kilometer::getMileageSumByRider('nicolas'),
                 'mileageLaura' => Kilometer::getMileageSumByRider('laura'),
-                'endingMileage' => Kilometer::getThisMonthsEndingMileage(),
+                'endingMileage' => Kilometer::getLastInsertedMileage(),
                 'mileageJonathanCompany' => Kilometer::getCompanyMileageSumByRider('jonathan'),
                 'mileageNicolasCompany' => Kilometer::getCompanyMileageSumByRider('nicolas'),
                 'mileageLauraCompany' => Kilometer::getCompanyMileageSumByRider('laura'),
