@@ -30,4 +30,20 @@ class Kilometer extends Model
 
         return $lastMileage->mileage_old;
     }
+
+    public static function getCompanyMileageSumByRider(string $rider)
+    {
+        $kilometers = Kilometer::where('by', $rider)
+            ->whereRaw('MONTH(created_at) = '. date('n'))
+            ->get();
+
+        $kilometerToReturn = 0;
+        foreach ($kilometers as $kilometer) {
+            if($kilometer->costs_for_parents) {
+                $kilometerToReturn += $kilometer->mileage_new - $kilometer->mileage_old;
+            }
+        }
+
+        return $kilometerToReturn;
+    }
 }

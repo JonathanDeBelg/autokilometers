@@ -25,20 +25,24 @@
                                             <tr>
                                                 <th scope="col">Naam</th>
                                                 <th scope="col">Gereden kilometers</th>
+                                                <th scope="col">KM's op de zaak</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>Jonathan</td>
                                                 <td>{{ $mileage_jonathan}}km</td>
+                                                <td>{{ $mileage_jonathan_company }}km</td>
                                             </tr>
                                             <tr>
                                                 <td>Nicolas</td>
                                                 <td>{{ $mileage_nicolas}}km</td>
+                                                <td>{{ $mileage_nicolas_company }}km</td>
                                             </tr>
                                             <tr>
                                                 <td>Laura</td>
-                                                <td>{{ $mileage_laura}}km</td>
+                                                <td>{{ $mileage_laura }}km</td>
+                                                <td>{{ $mileage_laura_company }}km</td>
                                             </tr>
                                         </tbody>
 

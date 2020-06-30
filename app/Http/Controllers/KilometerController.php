@@ -26,7 +26,10 @@ class KilometerController extends Controller
             'mileages' => Kilometer::orderBy('id', 'desc')->get(),
             'mileage_jonathan' => Kilometer::getMileageSumByRider('jonathan'),
             'mileage_nicolas' => Kilometer::getMileageSumByRider('nicolas'),
-            'mileage_laura' => Kilometer::getMileageSumByRider('laura')
+            'mileage_laura' => Kilometer::getMileageSumByRider('laura'),
+            'mileage_jonathan_company' => Kilometer::getCompanyMileageSumByRider('jonathan'),
+            'mileage_nicolas_company' => Kilometer::getCompanyMileageSumByRider('nicolas'),
+            'mileage_laura_company' => Kilometer::getCompanyMileageSumByRider('laura'),
         ]);
     }
 
