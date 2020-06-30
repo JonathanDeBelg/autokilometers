@@ -28,7 +28,7 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
-                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <div id="navbarSupportedContent" class="collapse navbar-collapse show">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register-km.show') }}">{{ __('Voeg kilometers toe') }}</a>
