@@ -13,9 +13,9 @@ class KilometerSeeder extends Seeder
     public function run()
     {
         DB::table('kilometers')->insert([
-            'mileage_old' => random_int(0, 1000000),
-            'mileage_new' => random_int(0, 1000000),
-            'by' => 'jonathan',
+            'mileage_old' => 0000000,
+            'mileage_new' => 332000,
+            'by' => 'root',
             'costs_for_parents' => true,
         ]);
     }
