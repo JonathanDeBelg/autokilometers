@@ -28,7 +28,7 @@ class Kilometer extends Model
         $lastMileage = Kilometer::orderBy('id', 'desc')
             ->first();
 
-        return $lastMileage->mileage_old;
+        return $lastMileage->mileage_new;
     }
 
     public static function getCompanyMileageSumByRider(string $rider)
