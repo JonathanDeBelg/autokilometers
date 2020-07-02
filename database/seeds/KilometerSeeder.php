@@ -13,10 +13,10 @@ class KilometerSeeder extends Seeder
     public function run()
     {
         DB::table('kilometers')->insert([
-            'mileage_old' => 0000000,
-            'mileage_new' => 332000,
+            'mileage_old' => 000000,
+            'mileage_new' => 233112,
             'by' => 'root',
-            'costs_for_parents' => true,
+            'costs_for_parents' => false,
         ]);
     }
 }
