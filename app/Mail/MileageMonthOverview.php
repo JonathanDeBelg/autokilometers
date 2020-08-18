@@ -33,16 +33,16 @@ class MileageMonthOverview extends Mailable
     public function build()
     {
         return $this->from(['address' => 'j.dionant@gmail.com', 'name' => 'Autokilometers'])
-            ->subject('Autokilometers maand ' . date('F'))
+            ->subject('Autokilometers maand ' . date('M', strtotime('-1 months')))
             ->markdown('mailing.mileage_overview')
             ->with([
-                'mileageJonathan' => Kilometer::getMileageSumByRider('jonathan'),
-                'mileageNicolas' => Kilometer::getMileageSumByRider('nicolas'),
-                'mileageLaura' => Kilometer::getMileageSumByRider('laura'),
+                'mileageJonathan' => Kilometer::getMileageSumByRiderAndMonth('jonathan', date('n', strtotime('-1 months'))),
+                'mileageNicolas' => Kilometer::getMileageSumByRiderAndMonth('nicolas', date('n', strtotime('-1 months'))),
+                'mileageLaura' => Kilometer::getMileageSumByRiderAndMonth('laura', date('n', strtotime('-1 months'))),
                 'endingMileage' => Kilometer::getLastInsertedMileage(),
-                'mileageJonathanCompany' => Kilometer::getCompanyMileageSumByRider('jonathan'),
-                'mileageNicolasCompany' => Kilometer::getCompanyMileageSumByRider('nicolas'),
-                'mileageLauraCompany' => Kilometer::getCompanyMileageSumByRider('laura'),
+                'mileageJonathanCompany' => Kilometer::getCompanyMileageSumByRiderAndMonth('jonathan', date('n', strtotime('-1 months'))),
+                'mileageNicolasCompany' => Kilometer::getCompanyMileageSumByRiderAndMonth('nicolas', date('n', strtotime('-1 months'))),
+                'mileageLauraCompany' => Kilometer::getCompanyMileageSumByRiderAndMonth('laura', date('n', strtotime('-1 months')))
         ]);
     }
 }
