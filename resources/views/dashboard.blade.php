@@ -12,16 +12,28 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12">
-
                                 @if(Session::has('message'))
                                     <div class="alert alert-info">
                                         <p>{{ Session::get('message') }}</p>
                                     </div>
                                 @endif
 
+                                <div class="d-flex">
+                                    @if ($month)
+                                        <p><a href="{{ route('overview-past-month', ['month' => $monthNumber - 1])  }}">< Kilometers vorige maand</a></p>
+                                    @else
+                                        <p><a href="{{ route('overview-past-month', ['month' => date('n', strtotime('-1 months'))])  }}">< Kilometers vorige maand</a></p>
+                                    @endif
+                                    <p class="ml-auto"><a href="{{ route('overview-past-month', ['month' => $monthNumber + 1])  }}">Kilometers volgende maand ></a></p>
+                                </div>
+
                                 <div class="mileage-overview">
-                                    <h5>Kilometeroverzicht {{ date('F') }}</h5>
-                                    <table class="table table-responsive">
+                                    @if ($month)
+                                        <h5>Kilometeroverzicht {{ $month }}</h5>
+                                    @else
+                                        <h5>Kilometeroverzicht {{ date('F') }}</h5>
+                                    @endif
+                                        <table class="table table-responsive">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Naam</th>

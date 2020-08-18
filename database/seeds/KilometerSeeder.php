@@ -16,7 +16,7 @@ class KilometerSeeder extends Seeder
             'mileage_old' => 233041,
             'mileage_new' => 233112,
             'by' => 'root',
-            'costs_for_parents' => true,
+            'costs_for_parents' => false,
         ]);
 
         DB::table('kilometers')->insert([

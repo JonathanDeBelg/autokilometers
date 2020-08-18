@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'KilometerController@index')
     ->name('dashboard');
 
+Route::get('/{month}', 'KilometerController@overview')
+    ->name('overview-past-month');
+
 Route::get('/register-km', 'KilometerController@create')
     ->name('register-km.show');
 
