@@ -19,16 +19,16 @@
                                 @endif
 
                                 <div class="d-flex">
-                                    @if ($month)
+                                    @if (isset($month))
                                         <p><a href="{{ route('overview-past-month', ['month' => $monthNumber - 1])  }}">< Kilometers vorige maand</a></p>
+                                        <p class="ml-auto"><a href="{{ route('overview-past-month', ['month' => $monthNumber + 1])  }}">Kilometers volgende maand ></a></p>
                                     @else
                                         <p><a href="{{ route('overview-past-month', ['month' => date('n', strtotime('-1 months'))])  }}">< Kilometers vorige maand</a></p>
                                     @endif
-                                    <p class="ml-auto"><a href="{{ route('overview-past-month', ['month' => $monthNumber + 1])  }}">Kilometers volgende maand ></a></p>
                                 </div>
 
                                 <div class="mileage-overview">
-                                    @if ($month)
+                                    @if (isset($month))
                                         <h5>Kilometeroverzicht {{ $month }}</h5>
                                     @else
                                         <h5>Kilometeroverzicht {{ date('F') }}</h5>
