@@ -23,6 +23,19 @@ class Kilometer extends Model
         return $kilometerToAdd;
     }
 
+    public static function getMileageSumByRiderAndMonth(string $rider, string $month): int
+    {
+        $kilometers = Kilometer::where('by', $rider)
+            ->whereRaw('MONTH(created_at) = '. date($month))
+            ->get();
+        $kilometerToAdd = 0;
+        foreach ($kilometers as $kilometer) {
+            $kilometerToAdd += $kilometer->mileage_new - $kilometer->mileage_old;
+        }
+
+        return $kilometerToAdd;
+    }
+
     public static function getLastInsertedMileage(): int
     {
         $lastMileage = Kilometer::orderBy('id', 'desc')
@@ -35,6 +48,22 @@ class Kilometer extends Model
     {
         $kilometers = Kilometer::where('by', $rider)
             ->whereRaw('MONTH(created_at) = '. date('n'))
+            ->get();
+
+        $kilometerToReturn = 0;
+        foreach ($kilometers as $kilometer) {
+            if($kilometer->costs_for_parents) {
+                $kilometerToReturn += $kilometer->mileage_new - $kilometer->mileage_old;
+            }
+        }
+
+        return $kilometerToReturn;
+    }
+
+    public static function getCompanyMileageSumByRiderAndMonth(string $rider, string $month)
+    {
+        $kilometers = Kilometer::where('by', $rider)
+            ->whereRaw('MONTH(created_at) = '. date($month))
             ->get();
 
         $kilometerToReturn = 0;

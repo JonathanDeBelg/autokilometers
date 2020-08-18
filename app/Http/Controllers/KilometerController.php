@@ -35,6 +35,27 @@ class KilometerController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return Factory|View
+     */
+    public function overview($month)
+    {
+        return view('dashboard', [
+            'mileages' => Kilometer::orderBy('id', 'desc')->get(),
+            'mileage_jonathan' => Kilometer::getMileageSumByRiderAndMonth('jonathan', $month),
+            'mileage_nicolas' => Kilometer::getMileageSumByRiderAndMonth('nicolas', $month),
+            'mileage_laura' => Kilometer::getMileageSumByRiderAndMonth('laura', $month),
+            'mileage_jonathan_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('jonathan', $month),
+            'mileage_nicolas_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('nicolas', $month),
+            'mileage_laura_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('laura', $month),
+            'mileage_atm' => Kilometer::getLastInsertedMileage(),
+            'month' => date('F', mktime(0,0,0,$month)),
+            'monthNumber' => $month
+        ]);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return Factory|View
