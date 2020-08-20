@@ -75,7 +75,6 @@ class KilometerController extends Controller
      */
     public function store(Request $request)
     {
-        dd('ads');
         $mileage_atm = Kilometer::latest('id')->first();
         if ($mileage_atm->mileage_new == $request->mileage_new) {
             return redirect()->back()->withErrors('Geen aangepast kilometerstand');
