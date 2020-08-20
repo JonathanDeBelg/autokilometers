@@ -50,8 +50,8 @@ class KilometerController extends Controller
             'mileage_nicolas_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('nicolas', $month),
             'mileage_laura_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('laura', $month),
             'mileage_atm' => Kilometer::getLastInsertedMileage(),
-            'month' => date('F', mktime(0,0,0,$month)),
-            'monthNumber' => $month
+            'month' => date('F', mktime(0,0,0,(int)$month)),
+            'monthNumber' => (int)$month
         ]);
     }
 
@@ -75,6 +75,7 @@ class KilometerController extends Controller
      */
     public function store(Request $request)
     {
+        dd('ads');
         $mileage_atm = Kilometer::latest('id')->first();
         if ($mileage_atm->mileage_new == $request->mileage_new) {
             return redirect()->back()->withErrors('Geen aangepast kilometerstand');

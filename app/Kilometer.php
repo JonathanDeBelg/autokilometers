@@ -26,7 +26,7 @@ class Kilometer extends Model
     public static function getMileageSumByRiderAndMonth(string $rider, string $month): int
     {
         $kilometers = Kilometer::where('by', $rider)
-            ->whereRaw('MONTH(created_at) = '. date($month))
+            ->whereRaw('MONTH(created_at) = '. date('n', strtotime($month)))
             ->get();
         $kilometerToAdd = 0;
         foreach ($kilometers as $kilometer) {
@@ -63,7 +63,7 @@ class Kilometer extends Model
     public static function getCompanyMileageSumByRiderAndMonth(string $rider, string $month)
     {
         $kilometers = Kilometer::where('by', $rider)
-            ->whereRaw('MONTH(created_at) = '. date($month))
+            ->whereRaw('MONTH(created_at) = '. date('n', strtotime($month)))
             ->get();
 
         $kilometerToReturn = 0;

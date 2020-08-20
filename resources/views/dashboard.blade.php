@@ -20,7 +20,7 @@
 
                                 <div class="d-flex">
                                     @if (isset($month))
-                                        <p><a href="{{ route('overview-past-month', ['month' => $monthNumber - 1])  }}">< Kilometers vorige maand</a></p>
+                                            <p><a href="{{ route('overview-past-month', ['month' => $monthNumber - 1])  }}">< Kilometers vorige maand</a></p>
                                         <p class="ml-auto"><a href="{{ route('overview-past-month', ['month' => $monthNumber + 1])  }}">Kilometers volgende maand ></a></p>
                                     @else
                                         <p><a href="{{ route('overview-past-month', ['month' => date('n', strtotime('-1 months'))])  }}">< Kilometers vorige maand</a></p>
