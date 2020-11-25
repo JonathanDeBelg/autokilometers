@@ -56,6 +56,9 @@
                                     </label>
 
                                     <input class="form-control" type="number" name="mileage_new" value="{{ $mileage }}" required>
+                                    @error('mileage_new')
+                                        <div class="error">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <button class="btn btn-primary" type="submit">Voeg kilometers toe</button>

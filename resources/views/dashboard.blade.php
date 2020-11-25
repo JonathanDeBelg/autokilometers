@@ -76,27 +76,12 @@
                                         </thead>
                                         <tbody>
                                             @foreach($mileages as $mileage)
-                                                @if(isset($monthNumber))
-
-                                                    @if(date('m', strtotime($mileage->created_at)) == $monthNumber)
-                                                        <tr>
-                                                            <th scope="row"><a href="{{ route('edit-km.edit', ['kilometer' => $mileage->id]) }}">{{ $mileage->id }}</a></th>
-                                                            <td>{{ $mileage->by }}</td>
-                                                            <td>{{ $mileage->mileage_new }}</td>
-                                                            <td>{{ $mileage->created_at->format('m-d-Y') }}</td>
-                                                            @if($mileage->costs_for_parents == 1)
-                                                                <td>Ja</td>
-                                                            @else
-                                                                <td>Nee</td>
-                                                            @endif
-                                                        </tr>
-                                                    @endif
-                                                @else
+                                                @if(date('m', strtotime($mileage->created_at)) == $monthNumber)
                                                     <tr>
                                                         <th scope="row"><a href="{{ route('edit-km.edit', ['kilometer' => $mileage->id]) }}">{{ $mileage->id }}</a></th>
                                                         <td>{{ $mileage->by }}</td>
                                                         <td>{{ $mileage->mileage_new }}</td>
-                                                        <td>{{ $mileage->created_at->format('m-d-Y') }} om {{ $mileage->created_at->format('H:i') }}</td>
+                                                        <td>{{ $mileage->created_at->format('m-d-Y') }}</td>
                                                         @if($mileage->costs_for_parents == 1)
                                                             <td>Ja</td>
                                                         @else

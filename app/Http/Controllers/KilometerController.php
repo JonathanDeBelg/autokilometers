@@ -22,16 +22,8 @@ class KilometerController extends Controller
      */
     public function index()
     {
-        return view('dashboard', [
-            'mileages' => Kilometer::orderBy('id', 'desc')->get(),
-            'mileage_jonathan' => Kilometer::getMileageSumByRider('jonathan'),
-            'mileage_nicolas' => Kilometer::getMileageSumByRider('nicolas'),
-            'mileage_laura' => Kilometer::getMileageSumByRider('laura'),
-            'mileage_jonathan_company' => Kilometer::getCompanyMileageSumByRider('jonathan'),
-            'mileage_nicolas_company' => Kilometer::getCompanyMileageSumByRider('nicolas'),
-            'mileage_laura_company' => Kilometer::getCompanyMileageSumByRider('laura'),
-            'mileage_atm' => Kilometer::getLastInsertedMileage()
-        ]);
+        $monthNumber = date('m');
+        return $this->overview($monthNumber);
     }
 
     /**
@@ -79,6 +71,8 @@ class KilometerController extends Controller
         $mileage_atm = Kilometer::latest('id')->first();
         if ($mileage_atm->mileage_new == $request->mileage_new) {
             return redirect()->back()->withErrors('Geen aangepast kilometerstand');
+        } elseif ($request->mileage_new < $mileage_atm->mileage_new ) {
+            return redirect()->back()->withErrors('Kilometerstand kan niet lager dan voorgaande kilometerstand zijn');
         } else {
             $kilometerStand = new Kilometer([
                 'by' => $request->by,
@@ -119,12 +113,23 @@ class KilometerController extends Controller
      *
      * @param Request $request
      * @param  \App\Kilometer  $kilometer
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function update(Request $request, Kilometer $kilometer)
     {
-        dd(Kilometer::find($request['kilometer-id']));
-//        ;
+        $mileage_atm = Kilometer::find($kilometer->id + 1);
+        if(isset($mileage_atm)) {
+            return redirect()->back()->withErrors('Kan niet meer aanpassen');
+        } else {
+            if ($kilometer->mileage_new == $request->mileage_new) {
+                return redirect()->back()->withErrors('Geen aangepast kilometerstand');
+            } else {
+                $kilometer->mileage_new = $request->mileage_new;
+                $kilometer->save();
+
+                return Redirect::route('dashboard')->with('message', 'Kilometerstand aangepast');
+            }
+        }
     }
 
     /**

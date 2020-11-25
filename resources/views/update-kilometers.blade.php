@@ -24,7 +24,7 @@
                                 @endif
 
                                 <form
-                                    action="{{ route('edit-km.update') }}"
+                                    action="{{ route('edit-km.update', $kilometer) }}"
                                     method="post"
                                     enctype="multipart/form-data">
                                     @csrf
