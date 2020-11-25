@@ -34,6 +34,13 @@ class Kilometer extends Model
 
         $kilometerToAdd = 0;
         foreach ($kilometers as $kilometer) {
+            if($kilometer->by == 'jonathan') {
+                echo $kilometer->created_at;
+                echo '<br>';
+                echo $kilometer->mileage_new - $kilometer->mileage_old;
+                echo '<br>';
+                echo '<br>';
+            }
             $kilometerToAdd += $kilometer->mileage_new - $kilometer->mileage_old;
         }
 
