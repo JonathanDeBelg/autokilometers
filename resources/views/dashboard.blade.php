@@ -81,7 +81,7 @@
                                                         <th scope="row"><a href="{{ route('edit-km.edit', ['kilometer' => $mileage->id]) }}">{{ $mileage->id }}</a></th>
                                                         <td>{{ $mileage->by }}</td>
                                                         <td>{{ $mileage->mileage_new }}</td>
-                                                        <td>{{ $mileage->created_at->format('m-d-Y') }}</td>
+                                                        <td>{{ $mileage->created_at->format('d-m-Y') }}</td>
                                                         @if($mileage->costs_for_parents == 1)
                                                             <td>Ja</td>
                                                         @else
