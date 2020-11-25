@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af3dc605-7b8b-4c92-9029-4878792dad4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/update-kilometers.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KilometerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KilometerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Kilometer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Kilometer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +164,9 @@
       <workItem from="1593509971787" duration="3556000" />
       <workItem from="1593704839748" duration="681000" />
       <workItem from="1597771459044" duration="5010000" />
-      <workItem from="1597920549778" duration="1643000" />
+      <workItem from="1597920549778" duration="1814000" />
+      <workItem from="1598615811060" duration="2750000" />
+      <workItem from="1606306467941" duration="602000" />
     </task>
     <servers />
   </component>
@@ -167,36 +174,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="680" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593453070765">
-      <screen x="0" y="23" width="1920" height="1009" />
-    </state>
-    <state x="680" y="327" key="#com.intellij.fileTypes.FileTypeChooser/1920.23.1280.777/0.23.1920.1009@0.23.1920.1009" timestamp="1593453070765" />
-    <state x="567" y="199" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593470305478">
-      <screen x="0" y="23" width="1920" height="1009" />
-    </state>
-    <state x="378" y="150" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.729@0.23.1280.729" timestamp="1593465795739" />
-    <state x="567" y="199" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.23.1280.777/0.23.1920.1009@0.23.1920.1009" timestamp="1593470305478" />
-    <state x="722" y="130" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1593463698808">
-      <screen x="0" y="23" width="1920" height="1009" />
-    </state>
-    <state x="722" y="130" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/1920.23.1280.777/0.23.1920.1009@0.23.1920.1009" timestamp="1593463698808" />
-    <state x="575" y="307" key="EditFileWatcherDialog" timestamp="1593454705848">
-      <screen x="0" y="23" width="1920" height="1009" />
-    </state>
-    <state x="575" y="307" key="EditFileWatcherDialog/1920.23.1280.777/0.23.1920.1009@0.23.1920.1009" timestamp="1593454705848" />
-    <state x="695" y="335" key="NewPhpClassDialog" timestamp="1593459168223">
-      <screen x="0" y="23" width="1920" height="1009" />
-    </state>
-    <state x="695" y="335" key="NewPhpClassDialog/1920.23.1280.777/0.23.1920.1009@0.23.1920.1009" timestamp="1593459168223" />
     <state x="625" y="255" width="670" height="675" key="run.anything.popup" timestamp="1597772897575">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="625" y="255" width="670" height="675" key="run.anything.popup/1920.23.1280.728/0.23.1920.1057@0.23.1920.1057" timestamp="1597772897575" />
-    <state x="625" y="244" key="run.anything.popup/1920.23.1280.777/0.23.1920.1009@0.23.1920.1009" timestamp="1593452786078" />
-    <state x="458" y="96" width="1005" height="936" key="search.everywhere.popup" timestamp="1593551698321">
-      <screen x="0" y="23" width="1920" height="1009" />
+    <state x="305" y="76" width="670" height="678" key="search.everywhere.popup" timestamp="1606306742825">
+      <screen x="0" y="23" width="1280" height="730" />
     </state>
-    <state x="305" y="76" width="670" height="676" key="search.everywhere.popup/0.23.1280.729@0.23.1280.729" timestamp="1593550052964" />
-    <state x="458" y="96" width="1005" height="936" key="search.everywhere.popup/1920.23.1280.777/0.23.1920.1009@0.23.1920.1009" timestamp="1593551698321" />
+    <state x="305" y="76" width="670" height="678" key="search.everywhere.popup/0.23.1280.730@0.23.1280.730" timestamp="1606306742825" />
+    <state x="305" y="79" width="670" height="721" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1598616038678" />
   </component>
 </project>

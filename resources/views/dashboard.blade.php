@@ -44,7 +44,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>Jonathan</td>
-                                                <td>{{ $mileage_jonathan}}km</td>
+                                                <td>{{ $mileage_jonathan }}km</td>
                                                 <td>{{ $mileage_jonathan_company }}km</td>
                                             </tr>
                                             <tr>
@@ -76,7 +76,7 @@
                                         <tbody>
                                         @foreach($mileages as $mileage)
                                             <tr>
-                                                <th scope="row">{{ $mileage->id }}</th>
+                                                <th scope="row"><a href="{{ route('edit-km.edit', ['kilometer' => $mileage->id]) }}">{{ $mileage->id }}</a></th>
                                                 <td>{{ $mileage->by }}</td>
                                                 <td>{{ $mileage->mileage_new }}</td>
                                                 @if($mileage->costs_for_parents == 1)

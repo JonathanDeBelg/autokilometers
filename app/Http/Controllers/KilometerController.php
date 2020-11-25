@@ -37,6 +37,7 @@ class KilometerController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param $month
      * @return Factory|View
      */
     public function overview($month)
@@ -96,11 +97,10 @@ class KilometerController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Kilometer  $kilometer
-     * @return \Illuminate\Http\Response
+     * @return Factory|View
      */
     public function show(Kilometer $kilometer)
     {
-        //
     }
 
     /**
@@ -111,7 +111,7 @@ class KilometerController extends Controller
      */
     public function edit(Kilometer $kilometer)
     {
-        //
+        return view('update-kilometers', ['kilometer' => $kilometer]);
     }
 
     /**
@@ -123,7 +123,8 @@ class KilometerController extends Controller
      */
     public function update(Request $request, Kilometer $kilometer)
     {
-        //
+        dd(Kilometer::find($request['kilometer-id']));
+//        ;
     }
 
     /**

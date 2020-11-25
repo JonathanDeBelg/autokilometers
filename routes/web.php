@@ -23,3 +23,9 @@ Route::get('/register-km', 'KilometerController@create')
 
 Route::post('/register-km', 'KilometerController@store')
     ->name('register-km.add');
+
+Route::post('/registration', 'KilometerController@update')
+    ->name('edit-km.update');
+
+Route::get('/registration/{kilometer}', 'KilometerController@edit')
+        ->name('edit-km.edit');
