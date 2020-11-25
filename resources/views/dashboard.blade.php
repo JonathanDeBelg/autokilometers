@@ -74,18 +74,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($mileages as $mileage)
-                                            <tr>
-                                                <th scope="row"><a href="{{ route('edit-km.edit', ['kilometer' => $mileage->id]) }}">{{ $mileage->id }}</a></th>
-                                                <td>{{ $mileage->by }}</td>
-                                                <td>{{ $mileage->mileage_new }}</td>
-                                                @if($mileage->costs_for_parents == 1)
-                                                    <td>Ja</td>
+                                            @foreach($mileages as $mileage)
+                                                @if(isset($monthNumber))
+
+                                                    @if(date('m', strtotime($mileage->created_at)) == $monthNumber)
+                                                        <tr>
+                                                            <th scope="row"><a href="{{ route('edit-km.edit', ['kilometer' => $mileage->id]) }}">{{ $mileage->id }}</a></th>
+                                                            <td>{{ $mileage->by }}</td>
+                                                            <td>{{ $mileage->mileage_new }}</td>
+                                                            @if($mileage->costs_for_parents == 1)
+                                                                <td>Ja</td>
+                                                            @else
+                                                                <td>Nee</td>
+                                                            @endif
+                                                        </tr>
+                                                    @endif
                                                 @else
-                                                    <td>Nee</td>
+                                                    <tr>
+                                                        <th scope="row"><a href="{{ route('edit-km.edit', ['kilometer' => $mileage->id]) }}">{{ $mileage->id }}</a></th>
+                                                        <td>{{ $mileage->by }}</td>
+                                                        <td>{{ $mileage->mileage_new }}</td>
+                                                        @if($mileage->costs_for_parents == 1)
+                                                            <td>Ja</td>
+                                                        @else
+                                                            <td>Nee</td>
+                                                        @endif
+                                                    </tr>
                                                 @endif
-                                            </tr>
-                                        @endforeach
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
