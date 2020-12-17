@@ -33,6 +33,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register-km.show') }}">{{ __('Voeg kilometers toe') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('refuels.overview') }}">{{ __('Tankbeurten') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('refuels.add') }}">{{ __('Voeg tankbeurt toe') }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>

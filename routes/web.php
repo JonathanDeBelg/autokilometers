@@ -29,3 +29,16 @@ Route::post('/registration/{kilometer}', 'KilometerController@update')
 
 Route::get('/registration/{kilometer}', 'KilometerController@edit')
         ->name('edit-km.edit');
+
+Route::get('/refuels', 'FuelController@index')
+    ->name('refuels.overview');
+
+Route::get('/refuels/add', 'FuelController@create')
+    ->name('refuels.add');
+
+Route::get('/refuels/{fuel}/edit', 'FuelController@show')
+    ->name('refuels.edit');
+
+Route::post('/refuels/add', 'FuelController@store')
+    ->name('refuels.store');
+

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af3dc605-7b8b-4c92-9029-4878792dad4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/refuels-add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/refuels.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +165,8 @@
       <workItem from="1597771459044" duration="5010000" />
       <workItem from="1597920549778" duration="1814000" />
       <workItem from="1598615811060" duration="2750000" />
-      <workItem from="1606306467941" duration="4788000" />
+      <workItem from="1606306467941" duration="5368000" />
+      <workItem from="1608201481361" duration="2452000" />
     </task>
     <servers />
   </component>
@@ -169,18 +174,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="401" y="23" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1608202452591">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state x="401" y="23" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.23.1280.731@0.23.1280.731" timestamp="1608202452591" />
     <state x="421" y="306" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606309695070">
       <screen x="0" y="23" width="1280" height="730" />
     </state>
     <state x="421" y="306" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.730@0.23.1280.730" timestamp="1606309695070" />
-    <state x="625" y="255" width="670" height="675" key="run.anything.popup" timestamp="1597772897575">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="304" y="174" key="run.anything.popup" timestamp="1608203728345">
+      <screen x="0" y="23" width="1280" height="731" />
     </state>
-    <state x="625" y="255" width="670" height="675" key="run.anything.popup/1920.23.1280.728/0.23.1920.1057@0.23.1920.1057" timestamp="1597772897575" />
-    <state x="305" y="76" width="670" height="678" key="search.everywhere.popup" timestamp="1606310273091">
-      <screen x="0" y="23" width="1280" height="730" />
+    <state x="304" y="174" key="run.anything.popup/0.23.1280.731@0.23.1280.731" timestamp="1608203728345" />
+    <state x="305" y="76" width="670" height="679" key="search.everywhere.popup" timestamp="1608203924150">
+      <screen x="0" y="23" width="1280" height="731" />
     </state>
     <state x="305" y="76" width="670" height="678" key="search.everywhere.popup/0.23.1280.730@0.23.1280.730" timestamp="1606310273091" />
-    <state x="305" y="79" width="670" height="721" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1598616038678" />
+    <state x="305" y="76" width="670" height="679" key="search.everywhere.popup/0.23.1280.731@0.23.1280.731" timestamp="1608203924150" />
   </component>
 </project>
