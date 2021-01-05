@@ -19,16 +19,21 @@
                                 @endif
 
                                 <div class="d-flex">
-                                    @if (isset($month))
-                                            <p><a href="{{ route('overview-past-month', ['month' => $monthNumber - 1])  }}">< Kilometers vorige maand</a></p>
-                                        <p class="ml-auto"><a href="{{ route('overview-past-month', ['month' => $monthNumber + 1])  }}">Kilometers volgende maand ></a></p>
+                                    @if($month === 'January')
+                                        <p><a href="{{ route('overview-past-month', ['year' => date('Y', strtotime('-1 months')), 'month' => 12])  }}">< Kilometers vorige maand</a></p>
                                     @else
-                                        <p><a href="{{ route('overview-past-month', ['month' => date('n', strtotime('-1 months'))])  }}">< Kilometers vorige maand</a></p>
+                                        <p><a href="{{ route('overview-past-month', ['year' => $year, 'month' => $monthNumber - 1])  }}">< Kilometers vorige maand</a></p>
+                                    @endif
+
+                                    @if($month === 'December')
+                                        <p class="ml-auto"><a href="{{ route('overview-past-month', ['year' => date('Y', strtotime('-1 months')), 'month' => 1])  }}">Kilometers volgende maand ></a></p>
+                                    @else
+                                        <p class="ml-auto"><a href="{{ route('overview-past-month', ['year' => $year, 'month' => $monthNumber + 1])  }}">Kilometers volgende maand ></a></p>
                                     @endif
                                 </div>
 
                                 <div class="mileage-overview">
-                                    @if (isset($month))
+                                    @if (isset($month) && isset($year))
                                         <h5>Kilometeroverzicht {{ $month }}</h5>
                                     @else
                                         <h5>Kilometeroverzicht {{ date('F') }}</h5>
@@ -81,7 +86,7 @@
                                                         <th scope="row"><a href="{{ route('edit-km.edit', ['kilometer' => $mileage->id]) }}">{{ $mileage->id }}</a></th>
                                                         <td>{{ $mileage->by }}</td>
                                                         <td>{{ $mileage->mileage_new }}</td>
-                                                        <td>{{ $mileage->created_at->format('d-m-Y') }}</td>
+{{--                                                        <td>{{ $mileage->created_at->format('d-m-Y') }}</td>--}}
                                                         @if($mileage->costs_for_parents == 1)
                                                             <td>Ja</td>
                                                         @else

@@ -23,28 +23,32 @@ class KilometerController extends Controller
     public function index()
     {
         $monthNumber = date('m');
-        return $this->overview($monthNumber);
+        $yearNumber = date('o');
+        return $this->overview($yearNumber, $monthNumber);
     }
 
     /**
      * Display a listing of the resource.
      *
+     * @param $year
      * @param $month
      * @return Factory|View
      */
-    public function overview($month)
+    public function overview($year, $month)
     {
         return view('dashboard', [
             'mileages' => Kilometer::orderBy('id', 'desc')->get(),
-            'mileage_jonathan' => Kilometer::getMileageSumByRiderAndMonth('jonathan', $month),
-            'mileage_nicolas' => Kilometer::getMileageSumByRiderAndMonth('nicolas', $month),
-            'mileage_laura' => Kilometer::getMileageSumByRiderAndMonth('laura', $month),
-            'mileage_jonathan_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('jonathan', $month),
-            'mileage_nicolas_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('nicolas', $month),
-            'mileage_laura_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('laura', $month),
+            'mileage_jonathan' => Kilometer::getMileageSumByRiderAndMonth('jonathan', $year, $month),
+            'mileage_nicolas' => Kilometer::getMileageSumByRiderAndMonth('nicolas', $year, $month),
+            'mileage_laura' => Kilometer::getMileageSumByRiderAndMonth('laura', $year, $month),
+            'mileage_jonathan_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('jonathan', $year, $month),
+            'mileage_nicolas_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('nicolas', $year, $month),
+            'mileage_laura_company' => Kilometer::getCompanyMileageSumByRiderAndMonth('laura', $year, $month),
             'mileage_atm' => Kilometer::getLastInsertedMileage(),
             'month' => date('F', mktime(0,0,0,(int)$month)),
-            'monthNumber' => (int)$month
+            'monthNumber' => (int)$month,
+            'year' => date('Y', mktime(0,0,0,(int)$month)),
+            'yearNumber' => (int)$year,
         ]);
     }
 
