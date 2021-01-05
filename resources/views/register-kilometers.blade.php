@@ -36,7 +36,7 @@
                                     <select name="by" class="form-control">
                                         <option value="laura">laura</option>
                                         <option value="nicolas">nicolas</option>
-                                        <option value="jonathan">jonathan</option>
+                                        <option value="jonathan" selected>jonathan</option>
                                     </select>
                                 </div>
 
